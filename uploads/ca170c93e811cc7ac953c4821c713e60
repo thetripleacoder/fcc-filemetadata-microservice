@@ -1,0 +1,12 @@
+window.onload = () => {
+  let articleLinks = document.querySelectorAll('.article-link');
+  let initialActiveLink = articleLinks[0];
+  initialActiveLink.classList.add('active');
+  var activeListItemTop = initialActiveLink.offsetTop;
+  var activeListItemHeight = initialActiveLink.offsetHeight;
+  var activeListItemBottom = initialActiveLink + activeListItemHeight;
+  var activeMarker = document.querySelector('.active-marker');
+  activeMarker.style.display = 'block';
+  activeMarker.style.top = activeListItemTop + 'px';
+  activeMarker.style.height = activeListItemHeight + 'px';
+}
