@@ -14,6 +14,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
+// Solution for 'INTERNAL SERVER ERROR' issue to disable file uploads to github repo: https://github.com/Oluwatomisin-code/Filemetadata-file_uploader__Freecodecamp-Project/blob/master/server.js
 app.post('/api/fileanalyse', multer().single('upfile'), function (req, res) {
   // req.file is the name of your file in the form above, here 'uploaded_file'
   // req.body will hold the text fields, if there were any
