@@ -2,7 +2,9 @@ var express = require('express');
 var cors = require('cors');
 require('dotenv').config();
 const multer = require('multer');
-// const upload = multer({ dest: __dirname + '/uploads/' });
+const upload = multer({
+  dest: 'https://github.com/thetripleacoder/fcc-filemetadata-microservice/tree/master/uploads',
+});
 
 var app = express();
 
