@@ -3,7 +3,7 @@ var cors = require('cors');
 require('dotenv').config();
 const multer = require('multer');
 
-const upload = multer({ dest: process.cwd() + '/public/uploads/' });
+// const upload = multer({ dest: process.cwd() + '/public/uploads/' });
 
 var app = express();
 
@@ -14,7 +14,7 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/views/index.html');
 });
 
-app.post('/api/fileanalyse', upload.single('upfile'), function (req, res) {
+app.post('/api/fileanalyse', multer().single('upfile'), function (req, res) {
   // req.file is the name of your file in the form above, here 'uploaded_file'
   // req.body will hold the text fields, if there were any
   console.log(req.file, req.body);
